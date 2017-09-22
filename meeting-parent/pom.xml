@@ -78,5 +78,63 @@
                 </configuration>
             </plugin>
         </plugins>
+
+        <!--插件管理-->
+        <pluginManagement>
+            <plugins>
+              <!-- 生成javadoc文档包的插件 -->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-javadoc-plugin</artifactId>
+                            <version>3.0.0-M1</version>
+                            <configuration>
+                                <charset>UTF-8</charset>
+                                <encoding>UTF-8</encoding>
+                                <docencoding>UTF-8</docencoding>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <id>attach-javadocs</id>
+                                    <goals>
+                                        <goal>jar</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!-- 生成sources源码包的插件 -->
+                        <plugin>
+                            <artifactId>maven-source-plugin</artifactId>
+                            <version>2.4</version>
+                            <configuration>
+                                <attach>true</attach>
+                            </configuration>
+                            <executions>
+                                <execution>
+                                    <phase>package</phase>
+                                    <goals>
+                                        <goal>jar-no-fork</goal>
+                                    </goals>
+                                </execution>
+                            </executions>
+                        </plugin>
+                        <!--打包main函数的插件-->
+                        <plugin>
+                            <groupId>org.apache.maven.plugins</groupId>
+                            <artifactId>maven-jar-plugin</artifactId>
+                            <version>2.4</version>
+                            <configuration>
+                                <archive>
+                                    <manifest>
+                                        <addClasspath>true</addClasspath>
+                                        <classpathPrefix>lib/</classpathPrefix>
+                                        <mainClass>com.meeting.app.AppMain</mainClass>
+                                    </manifest>
+                                </archive>
+                            </configuration>
+                        </plugin>
+            </plugins>
+        </pluginManagement>
     </build>
+
+
 </project>
