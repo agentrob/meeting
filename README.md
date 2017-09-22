@@ -5,4 +5,6 @@
  
 输入   
 register -u XX -p xxx
+
+
 login  -u xxx -p xxx
