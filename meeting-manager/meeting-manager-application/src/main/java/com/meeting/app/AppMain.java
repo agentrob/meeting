@@ -14,6 +14,7 @@ import java.util.Scanner;
 public class AppMain {
     public static void main(String[] args) {
         UserCommand userCommand=new UserCommand();
+        //用来表示是否登陆，及显示当前用户信息
         User user=null;
         Scanner scanner = new Scanner(System.in);
 
@@ -27,10 +28,13 @@ public class AppMain {
                     switch (arg[0]){
                         case "login":
                            user=userCommand.loginOptions(arg);
-                           System.out.println(user);
+                           //System.out.println(user);
                            break;
                         case "register":
                             userCommand.registerOptions(arg);
+                            break;
+                        default:
+                            System.out.println("打印所有指令帮助");
                             break;
                     }
                 }

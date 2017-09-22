@@ -20,6 +20,11 @@
             <groupId>commons-cli</groupId>
             <artifactId>commons-cli</artifactId>
         </dependency>
+        <dependency>
+            <groupId>com.meeting</groupId>
+            <artifactId>meeting-manager-service</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
     </dependencies>
 
 </project>

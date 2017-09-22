@@ -16,6 +16,12 @@
             <artifactId>meeting-manager-pojo</artifactId>
             <version>1.0-SNAPSHOT</version>
         </dependency>
+        <dependency>
+            <groupId>com.meeting</groupId>
+            <artifactId>meeting-manager-mapper</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+
     </dependencies>
 
 </project>

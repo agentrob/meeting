@@ -13,7 +13,7 @@ import com.meeting.serviceimpl.UserServiceImpl;
 public class UserController {
     UserService userService =new UserServiceImpl();
     public User  login(String username, String password){
-        User login=null;
+        User login=new User();
         login.setPassword(password);
         login.setUsername(username);
         //调用service去登陆

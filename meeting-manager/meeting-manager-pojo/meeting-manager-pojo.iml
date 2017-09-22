@@ -11,9 +11,5 @@
     </content>
     <orderEntry type="jdk" jdkName="1.8" jdkType="JavaSDK" />
     <orderEntry type="sourceFolder" forTests="false" />
-    <orderEntry type="module" module-name="meeting-manager-service" />
-    <orderEntry type="module" module-name="meeting-manager-controller" />
-    <orderEntry type="library" name="Maven: commons-cli:commons-cli:1.2" level="project" />
-    <orderEntry type="module" module-name="meeting-manager-mapper" />
   </component>
 </module>
