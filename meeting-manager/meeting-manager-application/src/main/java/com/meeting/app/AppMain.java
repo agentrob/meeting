@@ -13,6 +13,7 @@ import java.util.Scanner;
  */
 public class AppMain {
     public static void main(String[] args) {
+        //d
         UserCommand userCommand=new UserCommand();
         //用来表示是否登陆，及显示当前用户信息
         User user=null;
@@ -32,6 +33,9 @@ public class AppMain {
                            break;
                         case "register":
                             userCommand.registerOptions(arg);
+                            break;
+                        case "findAllUsers":
+                            userCommand.findAllUsersOptions(arg);
                             break;
                         default:
                             System.out.println("打印所有指令帮助");

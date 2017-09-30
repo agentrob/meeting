@@ -10,6 +10,22 @@
     <modelVersion>4.0.0</modelVersion>
 
     <artifactId>meeting-manager-mapper</artifactId>
+    <dependencies>
+        <dependency>
+            <groupId>com.meeting</groupId>
+            <artifactId>meeting-manager-pojo</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>com.meeting</groupId>
+            <artifactId>meeting-common</artifactId>
+            <version>1.0-SNAPSHOT</version>
+        </dependency>
+        <dependency>
+            <groupId>junit</groupId>
+            <artifactId>junit</artifactId>
+        </dependency>
+    </dependencies>
 
 
 </project>

@@ -8,5 +8,16 @@
     <artifactId>meeting-common</artifactId>
     <version>1.0-SNAPSHOT</version>
 
-
+<dependencies>
+    <dependency>
+        <groupId>com.alibaba</groupId>
+        <artifactId>fastjson</artifactId>
+        <version>1.2.38</version>
+    </dependency>
+    <dependency>
+        <groupId>com.meeting</groupId>
+        <artifactId>meeting-manager-pojo</artifactId>
+        <version>1.0-SNAPSHOT</version>
+    </dependency>
+</dependencies>
 </project>

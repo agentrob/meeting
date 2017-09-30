@@ -1,7 +1,11 @@
 package com.meeting.serviceimpl;
 
+import com.meeting.mapper.UserMapper;
+import com.meeting.mapperimpl.UserMapperImpl;
 import com.meeting.pojo.User;
 import com.meeting.service.UserService;
+
+import java.util.List;
 
 
 /**
@@ -11,14 +15,24 @@ import com.meeting.service.UserService;
  * Description:
  */
 public class UserServiceImpl implements UserService {
+    UserMapper userMapper =new UserMapperImpl();
+
 
     public boolean register(User user) {
+
+
+        User user1=userMapper.findUser(user);
+        if(user1==null){
+            userMapper.addUser(user);
+            return true;
+        }
+
         return false;
     }
 
 
     public User login(User user) {
-        return null;
+        return userMapper.findUserByUserName(user.getUsername());
     }
 
 
@@ -26,6 +40,13 @@ public class UserServiceImpl implements UserService {
         return false;
     }
 
+    @Override
+    public List<User> findAllUsers() {
+
+        List<User> users =userMapper.findAll();
+
+        return users;
+    }
 
 
 }

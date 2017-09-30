@@ -2,6 +2,7 @@ package com.meeting.service;
 
 import com.meeting.pojo.User;
 
+import java.util.List;
 
 
 /**
@@ -14,4 +15,7 @@ public interface UserService {
     public boolean register (User user);
     public User login (User user);
     public boolean logout (User user);
+
+    public  List<User> findAllUsers();
+
 }

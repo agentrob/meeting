@@ -1,6 +1,7 @@
 package com.meeting.command;
 import com.meeting.controller.UserController;
 import com.meeting.pojo.User;
+
 import org.apache.commons.cli.CommandLine;
 import org.apache.commons.cli.CommandLineParser;
 import org.apache.commons.cli.HelpFormatter;
@@ -79,8 +80,9 @@ public class UserCommand {
 
 
     public  void registerOptions(String[] args) {
-        String username=null;
-        String password=null;
+        User user = new User();
+
+
         Options options = new Options();
         Option opt = new Option("h", "help", false, "Print help");
         opt.setRequired(false);
@@ -93,6 +95,17 @@ public class UserCommand {
         opt = new Option("p", "password", true, "password");
         opt.setRequired(true);
         options.addOption(opt);
+
+        opt = new Option("e", "email", true, "email");
+        opt.setRequired(true);
+        options.addOption(opt);
+
+        opt = new Option("p", "phone", true, "phone");
+        opt.setRequired(true);
+        options.addOption(opt);
+
+
+
 
 
         HelpFormatter hf = new HelpFormatter();
@@ -115,15 +128,21 @@ public class UserCommand {
                     String value = commandLine.getOptionValue(name);
                     System.out.println(name + "=>" + value);*/
                     if("username".equalsIgnoreCase(opt1.getLongOpt())){
-                        username=commandLine.getOptionValue(opt1.getLongOpt());
+                        user.setUsername(commandLine.getOptionValue(opt1.getLongOpt()));
                     }
                     if("password".equalsIgnoreCase(opt1.getLongOpt())){
-                        password=commandLine.getOptionValue(opt1.getLongOpt());
+                        user.setPassword(commandLine.getOptionValue(opt1.getLongOpt()));
+                    }
+                    if("email".equalsIgnoreCase(opt1.getLongOpt())){
+                        user.setEmail(commandLine.getOptionValue(opt1.getLongOpt()));
+                    }
+                    if("phone".equalsIgnoreCase(opt1.getLongOpt())){
+                        user.setPhone(commandLine.getOptionValue(opt1.getLongOpt()));
                     }
                 }
             }
             //将获得的参数传到UserContorllor去注册。
-            boolean register = userController.register(username, password);
+            boolean register = userController.register(user);
 
             if(register){
                 System.out.println("注册成功请去登陆");
@@ -134,5 +153,9 @@ public class UserCommand {
         catch (ParseException e) {
             hf.printHelp("testApp", options, true);
         }
+    }
+
+    public void findAllUsersOptions(String[] arg) {
+        userController.findAllUsers();
     }
 }
