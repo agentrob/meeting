@@ -194,7 +194,6 @@ DateFormat df =new SimpleDateFormat("yyyy-MM-dd HH:mm");
                     list) {
                 String st =String.format("%1$tY-%1$tm-%1$td %1$tT", agenda.getStarttime());
                 String et =String.format("%1$tY-%1$tm-%1$td %1$tT",agenda.getEndtime());
-
                 System.out.printf("|%-23s|",st);
                 System.out.printf("|%-24s|",et);
                 System.out.printf("|%-12s|",agenda.getTitle());
