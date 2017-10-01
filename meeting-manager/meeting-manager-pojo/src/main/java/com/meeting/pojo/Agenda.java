@@ -16,7 +16,15 @@ public class Agenda {
     private List<String> participators;
     private Date starttime;
     private Date endtime;
+    private String InitiatorName;
 
+    public String getInitiatorName() {
+        return InitiatorName;
+    }
+
+    public void setInitiatorName(String initiatorName) {
+        InitiatorName = initiatorName;
+    }
 
     public String getTitle() {
         return title;
@@ -48,5 +56,24 @@ public class Agenda {
 
     public void setEndtime(Date endtime) {
         this.endtime = endtime;
+    }
+
+    public String geterId() {
+        return title;
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+
+        Agenda agenda = (Agenda) o;
+
+        return title.equals(agenda.title);
+    }
+
+    @Override
+    public int hashCode() {
+        return title.hashCode();
     }
 }

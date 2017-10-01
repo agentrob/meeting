@@ -44,16 +44,35 @@ public class UserController {
        if(Login.isLogin()){
 
            List<User> users= userService.findAllUsers();
-           System.out.println("---------------");
-           System.out.println("用户名  邮箱  电话号码 ");
-
+           System.out.println("------用户列表---------");
+           System.out.println("用户名       邮箱       电话号码 ");
             for (User user:
                  users) {
-                System.out.println(user.getUsername()+"  "+user.getEmail()+"   "+user.getPhone());
-
+                System.out.printf("%-12s",user.getUsername());
+                System.out.printf("%-12s",user.getEmail());
+                System.out.printf("%-12s",user.getPhone());
+                System.out.println();
             }
        }else {
            System.out.println("请登陆再查询！");
        }
+    }
+
+    public void logout(){
+        if(Login.isLogin()){
+           Login.setUser(null);
+            System.out.println("成功退出！");
+        }else {
+            System.out.println("请登陆再使用此操作！");
+        }
+    }
+    public void deleteUser(){
+        if(Login.isLogin()){
+           userService.deleteUser(Login.getUser());
+           System.out.println("成功删除，并注销登陆！");
+           Login.setUser(null);
+        }else {
+            System.out.println("请登陆再使用此操作！");
+        }
     }
 }

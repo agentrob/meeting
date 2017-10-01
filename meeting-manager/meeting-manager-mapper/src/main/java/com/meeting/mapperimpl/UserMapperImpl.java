@@ -1,7 +1,6 @@
 package com.meeting.mapperimpl;
 
 import com.meeting.mapper.UserMapper;
-import com.meeting.pojo.MySerializable;
 import com.meeting.pojo.User;
 import com.meeting.utils.JSonUtil;
 
@@ -50,5 +49,10 @@ public class UserMapperImpl implements UserMapper {
             }
         }
         return users;
+    }
+
+    @Override
+    public void deleteUserByUserName(String username) {
+        JSonUtil.deleteUser(username);
     }
 }

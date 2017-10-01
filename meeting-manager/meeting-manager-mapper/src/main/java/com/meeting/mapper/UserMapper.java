@@ -19,4 +19,7 @@ public interface UserMapper {
     User findUserByUserName(String username);
 
     List<User> findAll();
+
+    void deleteUserByUserName(String username);
+
 }

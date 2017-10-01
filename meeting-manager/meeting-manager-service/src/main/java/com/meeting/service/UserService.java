@@ -18,4 +18,8 @@ public interface UserService {
 
     public  List<User> findAllUsers();
 
+    void deleteUser(User user);
+
+    User findUserByUserName(String username);
+    User updateUserByUserName(String username);
 }

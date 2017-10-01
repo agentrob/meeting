@@ -18,7 +18,13 @@ public class User implements MySerializable{
     List<Agenda> createdgendas;
 
 
-
+    public User(String jjjj) {
+        super();
+        this.username=jjjj;
+    }
+    public User(){
+        super();
+    }
 
     public String getPassword() {
         return password;
