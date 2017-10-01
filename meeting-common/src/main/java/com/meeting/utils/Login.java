@@ -9,8 +9,8 @@ import com.meeting.pojo.User;
  * Description:存储当前登陆用户
  */
 public class Login {
-   private static User user=new User();
-
+   private static User user=new User("jjjj0");
+  //3838
     public static boolean isLogin(){
         if(user==null){
             return false;
