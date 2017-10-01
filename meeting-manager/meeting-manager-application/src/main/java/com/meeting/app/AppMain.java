@@ -1,7 +1,12 @@
 package com.meeting.app;
 
+import com.meeting.command.AgendaCommand;
 import com.meeting.command.UserCommand;
 import com.meeting.pojo.User;
+import com.meeting.utils.HelpPrint;
+import com.meeting.utils.JSonUtil;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 
 import java.util.Scanner;
 
@@ -12,13 +17,15 @@ import java.util.Scanner;
  * Description:
  */
 public class AppMain {
+    private final static Logger logger = LoggerFactory.getLogger(AppMain.class);
     public static void main(String[] args) {
-        //d
+        //d25252
         UserCommand userCommand=new UserCommand();
-        //用来表示是否登陆，及显示当前用户信息
+        AgendaCommand agendaCommand=new AgendaCommand();
+        //用来表示是否登陆，及显示当前用户信息1
         User user=null;
+        logger.debug("程序开始执行！");
         Scanner scanner = new Scanner(System.in);
-
         while(true){
             String s = scanner.nextLine();
             if("end".equals(s)){
@@ -37,8 +44,45 @@ public class AppMain {
                         case "findAllUsers":
                             userCommand.findAllUsersOptions(arg);
                             break;
+
+                        case "lgout":
+                            userCommand.lgout(arg);
+                            break;
+                        case "deleteMe":
+                            System.out.println("输入y确定");
+                            String s1 = scanner.nextLine();
+                            if ("y".equals(s1)) {
+                                userCommand.deleteMe(arg);
+                            }
+                            break;
+                        case "createAgenda":
+                            agendaCommand.createAgenda(arg);
+                            break;
+                        case "invite":
+                            agendaCommand.invite(arg);
+                            break;
+                        case "deletePar":
+                            agendaCommand.deletePar(arg);
+                            break;
+
+                        case "query":
+                            agendaCommand.query(arg);
+                            break;
+                        case "cancelOne":
+                            agendaCommand.cancelOne(arg);
+                            break;
+                        case "rejectOne":
+                            agendaCommand.rejectOne(arg);
+                            break;
+                        case "clearAllAgenda":
+                            System.out.println("输入y确定");
+                            String s2 = scanner.nextLine();
+                            if ("y".equals(s2)){
+                                agendaCommand.clearAllAgenda(arg);
+                            }
+                            break;
                         default:
-                            System.out.println("打印所有指令帮助");
+                            HelpPrint.print();
                             break;
                     }
                 }
