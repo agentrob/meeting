@@ -100,7 +100,7 @@ public class UserCommand {
         opt.setRequired(true);
         options.addOption(opt);
 
-        opt = new Option("p", "phone", true, "phone");
+        opt = new Option("pn", "phone", true, "phone");
         opt.setRequired(true);
         options.addOption(opt);
 
@@ -157,5 +157,13 @@ public class UserCommand {
 
     public void findAllUsersOptions(String[] arg) {
         userController.findAllUsers();
+    }
+
+    public void lgout(String[] arg) {
+        userController.logout();
+    }
+
+    public void deleteMe(String[] arg) {
+        userController.deleteUser();
     }
 }
