@@ -6,7 +6,7 @@ import com.meeting.pojo.Agenda; /**
  * Time: 14:59
  * Description:
  *
- *
+ *test
  */
 public interface AgendaMapper {
     boolean add(Agenda agenda);
